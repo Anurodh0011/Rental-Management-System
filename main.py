@@ -10,9 +10,7 @@ def display_main():
         print("\n Please select an option:")
         print("1. Enter 1 to Rent land")
         print("2. Enter 2 to Return land")
-        print("3. Enter 3 to Exit")
-        
-
+        print("3. Enter 3 to Exit or leave")
         
 
 def main():
