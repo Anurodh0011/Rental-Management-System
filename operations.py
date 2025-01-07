@@ -17,20 +17,23 @@ def display_rented_lands(rented_lands):
 
     print("\n\t\t\tRented Lands\n")
     print("------------------------------------------------------------------------")
-    print("Land ID\tCity\tLandFace\tExpected Return Date\tStatus")
+    print("{:<10} {:<12} {:<15} {:<20} {:<10}".format(
+        "Land ID", "City", "LandFace", "Expected Return Date", "Status"))
     print("------------------------------------------------------------------------")
 
     for land in rented_lands:
-        if "land_id" in land and "city_district" in land and "land_area" in land and "expected_return_date" in land:
-            print("{}\t{}\t{}\t{}\t{}".format(
-                land["land_id"],
-                land["city_district"],
-                land["land_area"],
-                land["expected_return_date"].strftime("%Y-%m-%d"),
-                "Rented"
+        if len(land) == 5:  # Ensure the list has all required fields
+            print("{:<10} {:<12} {:<15} {:<20} {:<10}".format(
+                land[0],  # Land ID
+                land[1],  # City
+                land[2],  # LandFace
+                land[3],  # Expected Return Date
+                land[4]   # Status
             ))
         else:
             print("Incomplete land information: {}".format(land))
+
+
 
 
 
